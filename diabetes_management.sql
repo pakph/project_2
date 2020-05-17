@@ -14,6 +14,7 @@ CREATE TABLE user_meds (
 user_id VARCHAR(30),
 med_id INTEGER(11),
 dosage INTEGER(11),
+no_of_tablets INTEGER(11),
 frequency INTEGER(11)
 );
 
@@ -34,16 +35,19 @@ dosage INTEGER(11)
 
 CREATE TABLE bgl_entry (
 user_id VARCHAR (30),
+date_time DATETIME NOT NULL,
 glucose INTEGER(11)
 );
 
 CREATE TABLE bp_entry (
 user_id VARCHAR (30),
+date_time DATETIME NOT NULL,
 systolic INTEGER(11),
 diastolic INTEGER(11)
 );
 
 CREATE TABLE carb_entry (
 user_id VARCHAR (30),
+date_time DATETIME NOT NULL,
 carb_amount INTEGER(11)
 );
