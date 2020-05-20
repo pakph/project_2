@@ -90,7 +90,7 @@ Pioglitazone-metformin (ACTOplus met)15 mg/500 mg, 15 mg/850 mg,
 
 Pramlintide (Symlin)1.5 mL pen-injector, 2.7 mL pen-injector
 
-Repaglinide (Prandin)0.5 mg tablets, 1 mg tablets, 2 mg tablets (peach)
+Repaglinide (Prandin)0.5 mg tablets, 1 mg tablets, 2 mg tablets
 
 Repaglinide (PrandiMet)1 mg repaglinide /500mg metformin, 2 mg repaglinide /500mg metformin
 
@@ -100,10 +100,11 @@ Rosiglitazone-glimepiride (Avandaryl)4 mg/1 mg, 4 mg/2 mg, 4 mg/4 mg, 8 mg/2 mg,
 
 Rosiglitazone-metformin (Avandamet)2 mg/500 mg, 4 mg/500 mg, 2 mg/1,000 mg, 4 mg/1,000 mg
 
-Saxagliptin (Onglyza)
+Saxagliptin (Onglyza)2.5 mg or 5 mg
 
-Semaglutide (Ozempic)
+Semaglutide (Ozempic)0.25 mg, 0.5 mg, 1 mg
 
-Sitagliptin (Januvia)
+Sitagliptin (Januvia)100 mg, 50 mg, 25mg 
 
-Sitagliptin-metformin (Janumet, Jentadueto)
+Sitagliptin-metformin (Janumet 100 mg/1000 mg, 50 mg/500 mg, 50 mg/1000 mg, 
+Jentadueto 5 mg/1000 mg, 2.5 mg /1000 mg)

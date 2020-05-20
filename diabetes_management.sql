@@ -13,7 +13,7 @@ PRIMARY KEY (user_id)
 CREATE TABLE user_meds (
 user_id VARCHAR(30),
 med_id INTEGER(11),
-dosage INTEGER(11),
+dosage VARCHAR(75),
 no_of_tablets INTEGER(11),
 frequency INTEGER(11)
 );
@@ -22,7 +22,7 @@ CREATE TABLE medication (
 med_id INTEGER(11) AUTO_INCREMENT NOT NULL,
 med_name VARCHAR(45),
 med_type VARCHAR (45),
-dosage INTEGER(11),
+dosage VARCHAR(75),
 PRIMARY KEY (med_id)
 );
 
@@ -30,7 +30,7 @@ CREATE TABLE med_entry (
 user_id VARCHAR (30),
 med_name VARCHAR(45),
 med_id INTEGER(11),
-dosage INTEGER(11)
+dosage VARCHAR(75)
 );
 
 CREATE TABLE bgl_entry (
