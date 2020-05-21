@@ -4,7 +4,11 @@ module.exports = function(sequelize, DataTypes) {
   var Carb = sequelize.define('carb_entry', {
     user_id: {
       type: DataTypes.STRING(30),
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'user_id',
+        key: 'user_id'
+      }
     },
     date_time: {
       type: DataTypes.DATE,
@@ -15,7 +19,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'carb_entry'
+    tableName: 'carb_entry',
+    timestamps: false
   });
   return Carb;
 };

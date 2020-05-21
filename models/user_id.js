@@ -1,8 +1,31 @@
+/* jshint indent: 2 */
+
 module.exports = function(sequelize, DataTypes) {
-    var User = sequelize.define("user_id", {
-        first_name: DataTypes.STRING,
-        last_name: DataTypes.STRING,
-        user_id: DataTypes.STRING
-    });
-    return User;
+  var User = sequelize.define('user_id', {
+    first_name: {
+      type: DataTypes.STRING(45),
+      allowNull: true
+    },
+    last_name: {
+      type: DataTypes.STRING(45),
+      allowNull: true
+    },
+    user_id: {
+      type: DataTypes.STRING(30),
+      allowNull: false,
+      primaryKey: true
+    }
+  }, {
+    tableName: 'user_id',
+    timestamps: false
+  });
+  
+  User.associate = function(models) {
+    User.hasMany(models.bgl_entry, { as: models.bgl_entries },
+    {
+      foreignKey: 'BGL_user_id',
+      sourceKey: 'user_id'
+    })
+  }
+  return User;
 };

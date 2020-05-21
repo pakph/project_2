@@ -16,11 +16,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     dosage: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(75),
       allowNull: true
     }
   }, {
-    tableName: 'medication'
+    tableName: 'medication',
+    timestamps: false
   });
   return Med
 };
