@@ -21,11 +21,16 @@ module.exports = function(sequelize, DataTypes) {
   });
   
   User.associate = function(models) {
-    User.hasMany(models.bgl_entry, { as: models.bgl_entries },
+    User.hasMany(models.bgl_entries,
     {
       foreignKey: 'BGL_user_id',
       sourceKey: 'user_id'
-    })
-  }
+    });
+    User.hasMany(models.bp_entries, {
+      foreignKey: 'BP_user_id',
+      sourceKey: 'user_id'
+    });
+  };
+
   return User;
 };

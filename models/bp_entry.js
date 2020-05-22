@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  var Bp = sequelize.define('bp_entry', {
+  var Bp = sequelize.define('bp_entries', {
     user_id: {
       type: DataTypes.STRING(30),
       allowNull: true,
@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     date_time: {
       type: DataTypes.DATE,
-      allowNull: false
+      defaultValue: DataTypes.NOW
     },
     systolic: {
       type: DataTypes.INTEGER,
@@ -23,9 +23,16 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'bp_entry',
+    tableName: 'bp_entries',
     timestamps: false
   });
+
+  Bp.associate = function(models) {
+    Bp.belongsTo(models.user_id, {
+      foreignKey: 'user_id',
+      as: 'BP_user_id'
+    })
+  }
   
   return Bp;
 };
