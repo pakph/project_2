@@ -12,7 +12,7 @@ PRIMARY KEY (user_id)
 
 CREATE TABLE user_meds (
 user_id VARCHAR(30),
-med_id INTEGER(11),
+med_name VARCHAR(30),
 dosage VARCHAR(75),
 no_of_tablets INTEGER(11),
 frequency INTEGER(11)
@@ -44,3 +44,8 @@ user_id VARCHAR (30),
 date_time DATETIME NOT NULL,
 carb_amount INTEGER(11)
 );
+
+SELECT * FROM user_id user_id RIGHT JOIN bgl_entry;
+SELECT * FROM user_id user_id RIGHT JOIN bp_entry;
+SELECT * FROM user_id user_id RIGHT JOIN carb_entry;
+SELECT * FROM user_id user_id RIGHT JOIN user_meds;

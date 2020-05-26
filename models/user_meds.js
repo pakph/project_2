@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(30),
       allowNull: true
     },
-    med_id: {
+    med_name: {
       type: DataTypes.STRING(45),
       allowNull: true
     },
