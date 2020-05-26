@@ -1,9 +1,9 @@
 USE diabetes_management;
 
-INSERT INTO user_id (first_name, last_name, user_id)
+INSERT INTO users (first_name, last_name, user_id)
 VALUES ("John", "Smith", "jsmith");
 
-INSERT INTO user_id (first_name, last_name, user_id)
+INSERT INTO users (first_name, last_name, user_id)
 VALUES ("Jane", "Doe", "jdoe");
 
 INSERT INTO user_meds (user_id, med_name, dosage, no_of_tablets, frequency)

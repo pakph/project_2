@@ -3,7 +3,7 @@ CREATE DATABASE diabetes_management;
 
 USE diabetes_management;
 
-CREATE TABLE user_id (
+CREATE TABLE users (
 first_name  VARCHAR (45),
 last_name  VARCHAR (45),
 user_id VARCHAR(30),
@@ -45,7 +45,3 @@ date_time DATETIME NOT NULL,
 carb_amount INTEGER(11)
 );
 
-SELECT user_id FROM user_id RIGHT JOIN bgl_entry ON;
-SELECT user_id FROM user_id user_id RIGHT JOIN bp_entry ON;
-SELECT user_id FROM user_id user_id RIGHT JOIN carb_entry ON;
-SELECT user_id FROM user_id user_id RIGHT JOIN user_meds ON;
