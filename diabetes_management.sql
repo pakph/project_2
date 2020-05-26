@@ -45,7 +45,7 @@ date_time DATETIME NOT NULL,
 carb_amount INTEGER(11)
 );
 
-SELECT * FROM user_id user_id RIGHT JOIN bgl_entry;
-SELECT * FROM user_id user_id RIGHT JOIN bp_entry;
-SELECT * FROM user_id user_id RIGHT JOIN carb_entry;
-SELECT * FROM user_id user_id RIGHT JOIN user_meds;
+SELECT user_id FROM user_id RIGHT JOIN bgl_entry ON;
+SELECT user_id FROM user_id user_id RIGHT JOIN bp_entry ON;
+SELECT user_id FROM user_id user_id RIGHT JOIN carb_entry ON;
+SELECT user_id FROM user_id user_id RIGHT JOIN user_meds ON;
