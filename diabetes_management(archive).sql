@@ -26,6 +26,13 @@ dosage VARCHAR(75),
 PRIMARY KEY (med_id)
 );
 
+CREATE TABLE med_entry (
+user_id VARCHAR (30),
+med_name VARCHAR(45),
+med_id INTEGER(11),
+dosage VARCHAR(75)
+);
+
 CREATE TABLE bgl_entry (
 user_id VARCHAR (30),
 date_time DATETIME NOT NULL,
