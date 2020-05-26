@@ -15,7 +15,7 @@ module.exports = function(app) {
 // GET route for getting all of the blood glucose entries
 app.get("/api/bglentry", function(req, res) {
     var query = {};
-    if (req.query.user_id) {
+    if (req.query.users) {
       query.User = req.query.user_id;
     }
     // 1. Add a join here to include one of the users to these entries
