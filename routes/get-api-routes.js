@@ -3,14 +3,6 @@ var express = require("express");
 var db = require("../models");
 
 module.exports = function(app) {
-    //API Route for All User Data
-    app.get("/api/users", function(req, res) {
-        db.User.findAll({}).then(function(data) {
-            res.json(data);
-            console.log(data);
-        });     
-    });
-
     // GET route for getting all of the blood glucose entries
     app.get("/api/bglentry/:user_id", function(req, res) {
         db.Bgl.findAll({
