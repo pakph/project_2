@@ -1,22 +1,26 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  var Bgl =  sequelize.define('Bgl', {
+  var BgBp =  sequelize.define('BgBp', {
     user_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(30),
       allowNull: true
     },
     date_time: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: false
     },
     glucose: {
       type: DataTypes.INTEGER,
       allowNull: true
+    },
+    pressure: {
+      type: DataTypes.STRING(30),
+      allowNull: true
     }
   }, {
-    tableName: 'bgl_entry'
+    tableName: 'bgbp_entry'
   });
 
-  return Bgl;
+  return BgBp;
 };

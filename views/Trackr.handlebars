@@ -38,13 +38,18 @@
         <div class="table-text">
             <thead>
                 <tr>
-                    <th>User</th>
+                    <th>Date/Time</th>
                     <th>Blood Glucose</th>
                     <th>Blood Pressure</th>
                 </tr>
             </thead>
 
             <tbody>
+                <tr>
+                    <td>{{user.date_time}}</td>
+                    <td>{{user.glucose}}</td>
+                    <td>{{user.pressure}}</td>
+                </tr>
                 <tr>
                     <td></td>
                     <td></td>
@@ -107,5 +112,3 @@
         </form>
     </div>
 </div>
-
-<script src="../assets/js/trackr.js"><{{!}}/script>

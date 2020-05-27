@@ -4,26 +4,16 @@ var db = require("../models");
 
 module.exports = function(app) {
     // GET route for getting all of the blood glucose entries
-    app.get("/api/bglentry/:user_id", function(req, res) {
-        db.Bgl.findAll({
+    app.get("/api/Trackr/:user_id", function(req, res) {
+        db.BgBp.findAll({
             where: {
                 user_id: req.params.user_id
-            }
+            },
+            raw:true,
             }).then(function(dbBgl) {
                 console.log(dbBgl);
-                res.json(dbBgl);
-            });
-        });
-
-    // GET route for getting all of the carb entries
-    app.get("/api/bpentry/:user_id", function(req, res) {
-        db.Bp.findAll({
-            where: {
-                user_id: req.params.user_id
-            }
-            }).then(function(dbBp) {
-                console.log(dbBp);
-                res.json(dbBp);
+                
+                res.render("Trackr", {user: dbBgl[0]} );
             });
         });
 
@@ -50,5 +40,12 @@ module.exports = function(app) {
             console.log(dbUserMeds);
             res.json(dbUserMeds);
             });
+        });
+
+    app.get("/api/meds", function(req, res) {
+        db.Med.findAll({}).then(function(data) {
+            res.json(data);
+            console.log(data);
+            });     
         });
 }

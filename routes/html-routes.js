@@ -9,9 +9,14 @@ module.exports = function(app) {
     // Each of the below routes just handles the HTML page that the user gets sent to.
 
     // route loads Trackr.handlebars
-    app.get("/Trackr", function(req, res) {
-        res.render("Trackr", {});
-    });
+    // app.get("/api/bglentry/:user_id", function(req, res) {
+    //     res.render("Trackr", user );
+    // });
+    
+    // // route loads Trackr.handlebars
+    // app.get("/Trackr", function(req, res) {
+    //     res.render("Trackr", {});
+    // });
 
     // route loads Carb-Trackr.handlebars
     app.get("/Carb-Trackr", function(req, res) {

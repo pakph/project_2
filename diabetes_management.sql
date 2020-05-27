@@ -26,17 +26,13 @@ dosage VARCHAR(75),
 PRIMARY KEY (med_id)
 );
 
-CREATE TABLE bgl_entry (
+CREATE TABLE bgbp_entry (
+id INT NOT NULL AUTO_INCREMENT,
 user_id VARCHAR (30),
 date_time DATETIME DEFAULT CURRENT_TIMESTAMP,
-glucose INTEGER(11)
-);
-
-CREATE TABLE bp_entry (
-user_id VARCHAR (30),
-date_time DATETIME DEFAULT CURRENT_TIMESTAMP,
-systolic INTEGER(11),
-diastolic INTEGER(11)
+glucose INTEGER(11),
+pressure VARCHAR(30),
+PRIMARY KEY (id)
 );
 
 CREATE TABLE carb_entry (

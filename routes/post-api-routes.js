@@ -6,7 +6,7 @@ var db = require("../models");
 module.exports = function(app) {
   // POST route for saving a new blood glucose entry
   app.post("/api/bglentry", function(req, res) {
-      db.Bgl.create(req.body).then(function(dbBgl) {
+      db.Bgl.create([req.body]).then(function(dbBgl) {
         res.json(dbBgl);
       });
     });
