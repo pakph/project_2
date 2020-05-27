@@ -9,13 +9,7 @@ module.exports = function(sequelize, DataTypes) {
             
         }
     });
-    // User.associate = function(models) {
-    //     User.hasOne(models.Bp, {
-    //         foreignKey: {
-    //             allowNull: true
-    //         }
-    //     });
-    // }
+
     return User;
 };
 

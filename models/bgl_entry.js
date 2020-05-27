@@ -18,12 +18,5 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'bgl_entry'
   });
 
-  // Bgl.associate = function(models) {
-  //   Bgl.belongsTo(models.User, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
   return Bgl;
 };
