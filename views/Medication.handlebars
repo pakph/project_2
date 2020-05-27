@@ -22,7 +22,7 @@
     {{#each medication}}
     <select>
       <option value="" disabled selected>Choose your option</option>
-      <option value={{@index}}>{{this}}</option>
+      <option value={{@index}}>{{this.med_name}}</option>
     </select>
     {{/each}}
     <label>Medications list</label>

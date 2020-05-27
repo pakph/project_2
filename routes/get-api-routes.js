@@ -45,7 +45,7 @@ module.exports = function(app) {
         app.get("/api/meds", function(req, res) {
             db.Med.findAll({raw:true}).then(function(dbMed) {
                 console.log(dbMed);
-                res.render("Medication", {user: dbMed[0]} );
+                res.render("Medication", {medication: dbMed[0]} );
             });     
         });
 }
