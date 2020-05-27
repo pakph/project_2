@@ -10,8 +10,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DATE,
       allowNull: false
     },
-    systolic: {
-      type: DataTypes.INTEGER,
+    pressure: {
+      type: DataTypes.STRING(30),
       allowNull: true
     },
     diastolic: {

@@ -35,8 +35,7 @@ glucose INTEGER(11)
 CREATE TABLE bp_entry (
 user_id VARCHAR (30),
 date_time DATETIME NOT NULL,
-systolic INTEGER(11),
-diastolic INTEGER(11)
+pressure VARCHAR(30)
 );
 
 CREATE TABLE carb_entry (
