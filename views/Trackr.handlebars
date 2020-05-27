@@ -4,7 +4,7 @@
         <a href="Homepage.html" class="brand-logo"><i class="material-icons">home</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="Trackr">Trackr</a></li>
-            <li><a href="Carb-Trackr">Carb Trackr</a></li>
+            <li><a href="Carb-Trackr.html">Carb Trackr</a></li>
             <li><a href="Medications">Medications</a></li>
             <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login/Sign-up</a>
         </ul>
@@ -16,7 +16,7 @@
 {{!-- inoput area --}}
 <div class="trackr-input">
     <div class="row">
-        <form class="col s12">
+        <form id="trackr-form" class="col s12">
             <div class="row">
                 <div class="input-field col s6">
                     <input id="blood_glucose" type="text" class="validate">
@@ -28,12 +28,15 @@
                 </div>
             </div>
         </form>
+
+        <button type="submit" form="trackr-form" class="btn btn-success">Add New Info</button>
     </div>
+
 </div>
 
 {{!-- table to show recorded data --}}
 <div class="trackr-container">
-    <table class="striped">
+    <table class="highlight">
         <div class="table-text">
             <thead>
                 <tr>
@@ -45,7 +48,7 @@
 
             <tbody>
                 <tr>
-                    <td></td>
+                    <td>jsmith</td>
                     <td></td>
                     <td></td>
                 </tr>
