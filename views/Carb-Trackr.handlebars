@@ -14,7 +14,7 @@
 {{!-- stuff that needs to be rendered in --}}
 
 {{!-- input for searching different food --}}
-<div class="row">
+{{!-- <div class="row">
     <form class="col s12">
         <div class="row">
             <div class="input-field col s12">
@@ -23,6 +23,15 @@
             </div>
         </div>
     </form>
+</div>
+
+{{!-- area for third-party api to be generated --}}
+<div class="carb-trackr-container" onload="doLoad()">
+    <div id="my_container" class="fatsecret_container"></div>
+</div> --}}
+
+<div onload="doLoad()">
+    <div id="my_container" class="fatsecret_container"></div>
 </div>
 
 {{!-- login modal --}}

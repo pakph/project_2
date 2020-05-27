@@ -13,34 +13,56 @@
 
 {{!-- stuff that needs to be rendered in --}}
 
-{{!-- table to show recorded data --}}
-<table class="striped">
-    <thead>
-        <tr>
-            <th>User</th>
-            <th>Blood Glucose</th>
-            <th>Blood Pressure</th>
-        </tr>
-    </thead>
+{{!-- inoput area --}}
+<div class="trackr-input">
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="blood_glucose" type="text" class="validate">
+                    <label for="blood-glucose">Blood Glucose</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="blood_pressure" type="text" class="validate">
+                    <label for="blood-pressure">Blood Pressure</label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+{{!-- table to show recorded data --}}
+<div class="trackr-container">
+    <table class="striped">
+        <div class="table-text">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Blood Glucose</th>
+                    <th>Blood Pressure</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </div>
+    </table>
+</div>
 
 {{!-- login modal --}}
 <div id="modal1" class="modal">
