@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  var Carb = sequelize.define('carb_entry', {
+  var Carb = sequelize.define('Carb', {
     user_id: {
       type: DataTypes.STRING(30),
       allowNull: true
@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
   Carb.associate = function(models) {
     // We're saying that a Post should belong to an Author
     // A Post can't be created without an Author due to the foreign key constraint
-    Carb.belongsTo(models.users, {
+    Carb.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }

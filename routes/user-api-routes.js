@@ -1,3 +1,5 @@
+var express = require("express");
+
 var db = require("../models");
 
 module.exports = function(app) {
@@ -8,11 +10,11 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/user/:id", function(req, res) {
+  app.get("/api/users/:user_id", function(req, res) {
     // 2; Add a join to include all of the user's input here
-    db.User.findOne({
+    db.User.findAll({
       where: {
-        id: req.params.user_id
+        user_id: req.params.user_id
       }
     }).then(function(dbUser) {
       res.json(dbUser);
@@ -25,10 +27,10 @@ module.exports = function(app) {
     });
   });
 
-  app.delete("/api/user/:id", function(req, res) {
+  app.delete("/api/user/:user_id", function(req, res) {
     db.User.destroy({
       where: {
-        id: req.params.user_id
+        user_id: req.params.user_id
       }
     }).then(function(dbUser) {
       res.json(dbUser);

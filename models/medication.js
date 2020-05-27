@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  var Med = sequelize.define('medication', {
+  var Med = sequelize.define('Med', {
     med_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

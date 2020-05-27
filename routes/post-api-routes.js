@@ -5,7 +5,7 @@ var db = require("../models");
 module.exports = function(app) {
     //API Route for All User Data
     app.get("/api/users", function(req, res) {
-        db.users.findAll({}).then(function(data) {
+        db.User.findAll({}).then(function(data) {
             res.json(data);
             console.log(data);
         });     
@@ -13,20 +13,20 @@ module.exports = function(app) {
 
 
 // GET route for getting all of the blood glucose entries
-app.get("/api/bglentry", function(req, res) {
-    var query = {};
-    if (req.query.users) {
-      query.User = req.query.user_id;
-    }
+app.get("/api/bglentry/:user_id", function(req, res) {
+    // var query = {};
+    // if (req.query.users) {
+    //   query.User = req.query.user_id;
+    // }
     // 1. Add a join here to include one of the users to these entries
-    db.Bgl.findOne({
+    db.Bgl.findAll({
         where: {
-            id: req.params.user_id
-          },
-          include: {
-            model: db.User
-            
+            user_id: req.params.user_id
           }
+          // include: {
+          //   model: db.User
+            
+          // }
         }).then(function(dbBgl) {
           console.log(dbBgl);
           res.json(dbBgl);
@@ -34,12 +34,12 @@ app.get("/api/bglentry", function(req, res) {
       });
 
 // GET route for getting all of the carb entries
-app.get("/api/bpentry", function(req, res) {
+app.get("/api/bpentry/:user_id", function(req, res) {
     var query = {};
     if (req.query.user_id) {
       query.User = req.query.user_id;
     }
-      db.bp_entry.findOne({
+      db.Bp.findOne({
         where: {
             id: req.params.user_id
           },
@@ -127,10 +127,10 @@ app.get("/api/medentry", function(req, res) {
 
 
   // DELETE route for deleting a blood glucose entry
-  app.delete("/api/bglentry/:id", function(req, res) {
+  app.delete("/api/bglentry/:user_id", function(req, res) {
     db.Bgl.destroy({
       where: {
-        id: req.params.id
+        user_id: req.params.user_id
       }
     }).then(function(dbBgl) {
       res.json(dbBgl);
@@ -138,10 +138,10 @@ app.get("/api/medentry", function(req, res) {
   });
 
     // DELETE route for deleting a blood pressure entry
-    app.delete("/api/bpentry/:id", function(req, res) {
+    app.delete("/api/bpentry/:user_id", function(req, res) {
         db.Bp.destroy({
           where: {
-            id: req.params.id
+            user_id: req.params.user_id
           }
         }).then(function(dbBp) {
           res.json(dbBp);
@@ -149,10 +149,10 @@ app.get("/api/medentry", function(req, res) {
       });
 
   // DELETE route for deleting a carbohydrates entry
-  app.delete("/api/carbentry/:id", function(req, res) {
+  app.delete("/api/carbentry/:user_id", function(req, res) {
     db.Carb.destroy({
       where: {
-        id: req.params.id
+        user_id: req.params.user_id
       }
     }).then(function(dbCarb) {
       res.json(dbCarb);
@@ -160,10 +160,10 @@ app.get("/api/medentry", function(req, res) {
   });
 
   // DELETE route for deleting a medication entry
-  app.delete("/api/medentry/:id", function(req, res) {
+  app.delete("/api/medentry/:user_id", function(req, res) {
     db.UserMeds.destroy({
       where: {
-        id: req.params.id
+        user_id: req.params.user_id
       }
     }).then(function(dbUserMeds) {
       res.json(dbUserMeds);
@@ -173,12 +173,12 @@ app.get("/api/medentry", function(req, res) {
 
 
 // PUT route for updating blood glucose
-   app.put("/api/bglentry", function(req, res) {
+   app.put("/api/bglentry/:user_id", function(req, res) {
     db.Bgl.update(
       req.body,
       {
         where: {
-          id: req.body.id
+          user_id: req.body.user_id
         }
       }).then(function(dbBgl) {
       res.json(dbBgl);
@@ -186,12 +186,12 @@ app.get("/api/medentry", function(req, res) {
   });
 
   // PUT route for updating blood pressure
-  app.put("/api/bpentry", function(req, res) {
+  app.put("/api/bpentry/:user_id", function(req, res) {
     db.Bp.update(
       req.body,
       {
         where: {
-          id: req.body.id
+          user_id: req.body.user_id
         }
       }).then(function(dbBp) {
       res.json(dbBp);
@@ -199,12 +199,12 @@ app.get("/api/medentry", function(req, res) {
   });
 
   // PUT route for updating carbs
-  app.put("/api/carbentry", function(req, res) {
+  app.put("/api/carbentry/:user_id", function(req, res) {
     db.Carb.update(
       req.body,
       {
         where: {
-          id: req.body.id
+          user_id: req.body.user_id
         }
       }).then(function(dbCarb) {
       res.json(dbCarb);
@@ -212,12 +212,12 @@ app.get("/api/medentry", function(req, res) {
   });
 
   // PUT route for updating medications
-  app.put("/api/medentry", function(req, res) {
+  app.put("/api/medentry/:user_id", function(req, res) {
     db.UserMeds.update(
       req.body,
       {
         where: {
-          id: req.body.id
+          user_id: req.body.user_id
         }
       }).then(function(dbMeds) {
       res.json(dbMeds);
