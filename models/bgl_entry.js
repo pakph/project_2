@@ -3,12 +3,12 @@
 module.exports = function(sequelize, DataTypes) {
   var Bgl =  sequelize.define('Bgl', {
     user_id: {
-      type: DataTypes.STRING(30),
+      type: DataTypes.STRING,
       allowNull: true
     },
     date_time: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: true
     },
     glucose: {
       type: DataTypes.INTEGER,
@@ -18,14 +18,12 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'bgl_entry'
   });
 
-  Bgl.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    Bgl.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Bgl.associate = function(models) {
+  //   Bgl.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
   return Bgl;
 };

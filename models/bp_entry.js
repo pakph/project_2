@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     date_time: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: true
     },
     systolic: {
       type: DataTypes.INTEGER,
@@ -22,15 +22,16 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'bp_entry'
   });
 
-  Bp.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    Bp.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Bp.associate = function(models) {
+  // //   We're saying that a Post should belong to an Author
+  // //   A Post can't be created without an Author due to the foreign key constraint
+  //   Bp.belongsTo(models.User,
+  //   {
+  //     foreignKey: {
+  //       allowNull: true
+  //     }
+  //   });
+  // };
   
   return Bp;
 };

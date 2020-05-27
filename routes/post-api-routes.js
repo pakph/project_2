@@ -2,92 +2,14 @@ var express = require("express");
 
 var db = require("../models");
 
+
 module.exports = function(app) {
-    //API Route for All User Data
-    app.get("/api/users", function(req, res) {
-        db.User.findAll({}).then(function(data) {
-            res.json(data);
-            console.log(data);
-        });     
-    });
-
-
-// GET route for getting all of the blood glucose entries
-app.get("/api/bglentry/:user_id", function(req, res) {
-    // var query = {};
-    // if (req.query.users) {
-    //   query.User = req.query.user_id;
-    // }
+// GET route for getting all of the medication entries
+  app.get("/api/medentry/:user_id", function(req, res) {
     // 1. Add a join here to include one of the users to these entries
-    db.Bgl.findAll({
+    db.UserMeds.findAll({
         where: {
             user_id: req.params.user_id
-          }
-          // include: {
-          //   model: db.User
-            
-          // }
-        }).then(function(dbBgl) {
-          console.log(dbBgl);
-          res.json(dbBgl);
-        });
-      });
-
-// GET route for getting all of the carb entries
-app.get("/api/bpentry/:user_id", function(req, res) {
-    var query = {};
-    if (req.query.user_id) {
-      query.User = req.query.user_id;
-    }
-      db.Bp.findOne({
-        where: {
-            id: req.params.user_id
-          },
-          include: {
-            model: db.User
-            
-          }
-        }).then(function(dbBp) {
-          console.log(dbBp);
-          res.json(dbBp);
-        });
-      });
-
-// GET route for getting all of the carb entries
-app.get("/api/carbentry", function(req, res) {
-    var query = {};
-    if (req.query.user_id) {
-      query.User = req.query.user_id;
-    }
-
-      db.Carb.findOne({
-        where: {
-            id: req.params.user_id
-          },
-          include: {
-            model: db.User
-            
-          }
-        }).then(function(dbCarb) {
-          console.log(dbCarb);
-          res.json(dbCarb);
-        });
-      });
-
-// GET route for getting all of the medication entries
-app.get("/api/medentry", function(req, res) {
-    var query = {};
-    if (req.query.user_id) {
-      query.User = req.query.user_id;
-    }
-    // 1. Add a join here to include one of the users to these entries
-    db.UserMeds.findOne({
-        where: {
-            id: req.params.user_id
-          },
-          include: {
-            model: db.User
-            
           }
         }).then(function(dbUserMeds) {
           console.log(dbUserMeds);

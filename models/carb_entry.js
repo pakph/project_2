@@ -1,14 +1,12 @@
-/* jshint indent: 2 */
-
 module.exports = function(sequelize, DataTypes) {
   var Carb = sequelize.define('Carb', {
     user_id: {
-      type: DataTypes.STRING(30),
+      type: DataTypes.STRING,
       allowNull: true
     },
     date_time: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: true
     },
     carb_amount: {
       type: DataTypes.INTEGER,
@@ -18,14 +16,14 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'carb_entry'
   });
 
-  Carb.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    Carb.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Carb.associate = function(models) {
+  //   // We're saying that a Post should belong to an Author
+  //   // A Post can't be created without an Author due to the foreign key constraint
+  //   Carb.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
   return Carb;
 };

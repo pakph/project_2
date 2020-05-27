@@ -1,5 +1,3 @@
-/* jshint indent: 2 */
-
 module.exports = function(sequelize, DataTypes) {
   var Med = sequelize.define('Med', {
     med_id: {
@@ -8,15 +6,15 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true
     },
     med_name: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.STRING,
       allowNull: true
     },
     med_type: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.STRING,
       allowNull: true
     },
     dosage: {
-      type: DataTypes.STRING(75),
+      type: DataTypes.STRING,
       allowNull: true
     }
   }, {
