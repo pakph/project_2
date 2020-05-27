@@ -27,8 +27,7 @@ app.use(morgan('dev'))
 require("./routes/html-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
-
-
+require("./routes/get-api-routes.js")(app);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(function() {

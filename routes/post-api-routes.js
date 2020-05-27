@@ -4,21 +4,6 @@ var db = require("../models");
 
 
 module.exports = function(app) {
-// GET route for getting all of the medication entries
-  app.get("/api/medentry/:user_id", function(req, res) {
-    // 1. Add a join here to include one of the users to these entries
-    db.UserMeds.findAll({
-        where: {
-            user_id: req.params.user_id
-          }
-        }).then(function(dbUserMeds) {
-          console.log(dbUserMeds);
-          res.json(dbUserMeds);
-        });
-      });
-
-
-
  // POST route for saving a new blood glucose entry
  app.post("/api/bglentry", function(req, res) {
     db.Bgl.create(req.body).then(function(dbBgl) {
