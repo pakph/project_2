@@ -20,8 +20,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'medication',
-    timestamps: false
+    tableName: 'medication'
   });
   return Med
 };

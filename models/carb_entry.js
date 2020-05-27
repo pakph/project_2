@@ -4,11 +4,7 @@ module.exports = function(sequelize, DataTypes) {
   var Carb = sequelize.define('carb_entry', {
     user_id: {
       type: DataTypes.STRING(30),
-      allowNull: true,
-      references: {
-        model: 'user_id',
-        key: 'user_id'
-      }
+      allowNull: true
     },
     date_time: {
       type: DataTypes.DATE,
@@ -19,8 +15,17 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'carb_entry',
-    timestamps: false
+    tableName: 'carb_entry'
   });
+
+  Carb.associate = function(models) {
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    Carb.belongsTo(models.users, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Carb;
 };

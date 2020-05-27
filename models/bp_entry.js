@@ -1,18 +1,14 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  var Bp = sequelize.define('bp_entries', {
+  var Bp = sequelize.define('bp_entry', {
     user_id: {
       type: DataTypes.STRING(30),
-      allowNull: true,
-      references: {
-        model: 'user_id',
-        key: 'user_id'
-      }
+      allowNull: true
     },
     date_time: {
       type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW
+      allowNull: false
     },
     systolic: {
       type: DataTypes.INTEGER,
@@ -23,16 +19,18 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'bp_entries',
-    timestamps: false
+    tableName: 'bp_entry'
   });
 
   Bp.associate = function(models) {
-    Bp.belongsTo(models.user_id, {
-      foreignKey: 'user_id',
-      as: 'BP_user_id'
-    })
-  }
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    Bp.belongsTo(models.users, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   
   return Bp;
 };
