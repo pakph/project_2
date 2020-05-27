@@ -15,8 +15,6 @@ VALUES ("jsmith", "Glipizide", "10 mg", 1, 1);
 INSERT INTO carb_entry (user_id, carb_amount)
 VALUES ("jsmith", 30);
 
-INSERT INTO bgl_entry (user_id, glucose)
-VALUES ("jsmith", 116);
+INSERT INTO bgbp_entry (user_id, glucose, pressure)
+VALUES ("jsmith", 116, "130/50");
 
-INSERT INTO bp_entry (user_id, systolic, diastolic)
-VALUES ("jsmith", 130, 50);

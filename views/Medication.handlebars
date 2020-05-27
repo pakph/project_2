@@ -18,6 +18,15 @@
 
     <!-- Dropdown Structure -->
     <ul id='dropdown1' class='dropdown-content'>
+       <div class="input-field col s12">
+    {{#each medication}}
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value={{@index}}>{{this}}</option>
+    </select>
+    {{/each}}
+    <label>Medications list</label>
+  </div>
         {{!-- medications from medication DB --}}
     </ul>
 

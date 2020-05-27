@@ -8,13 +8,6 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-    app.get("/api/meds", function(req, res) {
-        db.Med.findAll({}).then(function(data) {
-            res.json(data);
-            console.log(data);
-        });     
-    });
-
     // Each of the below routes just handles the HTML page that the user gets sent to.
 
     // route loads Trackr.handlebars
