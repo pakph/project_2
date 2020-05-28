@@ -17,8 +17,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true
     }
+    
   }, {
-    tableName: 'medication'
+    tableName: 'medication',
+    timestamps: false
   });
   return Med
 };

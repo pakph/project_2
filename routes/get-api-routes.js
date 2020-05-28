@@ -43,9 +43,10 @@ module.exports = function(app) {
         });
 
     app.get("/api/meds", function(req, res) {
-        db.Med.findAll({}).then(function(data) {
-            res.json(data);
-            console.log(data);
+        db.Med.findAll({ raw:true}).then(function(data) {
+            console.log(data)
+            //res.json(data);
+            res.render('Medication', {medication:data});
             });     
         });
 }
