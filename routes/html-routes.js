@@ -19,9 +19,9 @@ module.exports = function(app) {
     // });
 
     // route loads Carb-Trackr.handlebars
-    app.get("/Carb-Trackr", function(req, res) {
-        res.render("Carb-Trackr", {});
-    });
+    // app.get("/Carb-Trackr", function(req, res) {
+    //     res.render("Carb-Trackr", {});
+    // });
 
     // route loads Medication.handlebars
     app.get("/Medications", function(req, res) {

@@ -1,19 +1,22 @@
 $(document).ready(function() {
-    $(document).on("submit", "#trackr-form", function(event){
+    $("#trackr-form",).on("submit", function(event){
         event.preventDefault();
-        console.log("hello")
+        var newInfo = {
+            user_id: "jsmith",
+            glucose: $("#blood_glucose").val(),
+            pressure: $("#blood_pressure").val(),
+            date_time: new Date(Date.now())
+        };
+
+        $.ajax("/api/Trackr/:user_id", {
+            type: "POST",
+            data: newInfo
+        }).then(
+            function() {
+                console.log("Added new data");
+                location.reload();
+            }
+        );
     });
-    function getBgl() {
-        var rowsToAdd = [];
-        $.get("/api/bglentry/jsmith", function(data) {
-            for (var i = 0; i < data.length; i++) {
-                rowsToAdd.push(createBglRow(data[i]));
-            }
-        })
-        $.get("/api/bpentry/jsmith", function(data) {
-            for (var i = 0; i < data.length; i++) {
-                rowsToAdd.push()
-            }
-        })
-    }
+    
 });

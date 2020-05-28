@@ -13,7 +13,7 @@ module.exports = function(app) {
             }).then(function(dbBgl) {
                 console.log(dbBgl);
                 
-                res.render("Trackr", {user: dbBgl[0]} );
+                res.render("Trackr", {user: dbBgl} );
             });
         });
 

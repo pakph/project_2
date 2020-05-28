@@ -3,8 +3,8 @@
     <div class="nav-wrapper">
         <a href="Homepage.html" class="brand-logo"><i class="material-icons">home</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="Trackr">Trackr</a></li>
-            <li><a href="Carb-Trackr">Carb Trackr</a></li>
+            <li><a href="Trackr/jsmith">Trackr</a></li>
+            <li><a href="Carb-Trackr.html">Carb Trackr</a></li>
             <li><a href="Medications">Medications</a></li>
             <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login/Sign-up</a>
         </ul>
@@ -19,12 +19,12 @@
         <form  id="trackr-form" class="col s12">
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="blood_glucose" type="text" class="validate">
-                    <label for="blood-glucose">Blood Glucose</label>
+                    <input id="blood_glucose" type="text" class="validate" name="bloodGlucose">
+                    <label for="blood_glucose">Blood Glucose</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="blood_pressure" type="text" class="validate">
-                    <label for="blood-pressure">Blood Pressure</label>
+                    <input id="blood_pressure" type="text" class="validate" name="bloodPressure">
+                    <label for="blood_pressure">Blood Pressure</label>
                 </div>
             </div>
         </form>
@@ -45,26 +45,13 @@
             </thead>
 
             <tbody>
+                {{#each user}}
                 <tr>
-                    <td>{{user.date_time}}</td>
-                    <td>{{user.glucose}}</td>
-                    <td>{{user.pressure}}</td>
+                    <td>{{this.date_time}}</td>
+                    <td>{{this.glucose}}</td>
+                    <td>{{this.pressure}}</td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                {{/each}}
             </tbody>
         </div>
     </table>
@@ -112,3 +99,5 @@
         </form>
     </div>
 </div>
+
+<script src="/assets/js/trackr.js"><{{!}}/script>
